@@ -2,7 +2,7 @@
 This is an official implementation of ***Iterative-Free Quantum Approximate Optimization Algorithm Using Neural Networks*** paper. [[Link]](https://amosy3.github.io/papers/QAOA_init.pdf)
 
 
-<div style="width: 60%; height: 60%">
+<div style="width: 20%; height: 20%">
   
   ![](QAOA_init.png)
   
