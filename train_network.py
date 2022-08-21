@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument("-n", "--number_of_nodes", type=int)
 parser.add_argument("-p", "--layers", type=int)
-parser.add_argument("--csv_path", type=str)
+parser.add_argument("--csv_path",help="put file in double parentheses", type=str)
 args = parser.parse_args()
 
 
@@ -52,8 +52,8 @@ epochs = 100
 bit_len = int(args.number_of_nodes * (args.number_of_nodes - 1) / 2)
 p = args.layers
 
-data_df = pd.read_csv("train_datasets/" + args.csv_path + ".csv")
-test_df = pd.read_csv("test_datasets/" + args.csv_path + "_test_data.csv")
+data_df = pd.read_csv(r"train_datasets/" + args.csv_path + ".csv")
+test_df = pd.read_csv(r"test_datasets/" + args.csv_path + "_test_data.csv")
 
 msk = np.random.rand(len(data_df)) < 0.8
 train_df = data_df[msk]

@@ -47,7 +47,7 @@ if os.path.isfile(read_file):
 else:
     raise AssertionError("you gave no file or not corrected path")
 
-file_name = "test_datasets/p_%s_n_%s_prob_%s_weighted_%s_bounds_%s_noisy_%s_test_data.csv" % \
+file_name = r"test_datasets/p_%s_n_%s_prob_%s_weighted_%s_bounds_%s_noisy_%s_test_data.csv" % \
             (p, nodes_num, prob, weighted_bool,bounds_bool, noisy_bool)
 
 test_df = pd.DataFrame({}, columns=adj_vec_cols)
