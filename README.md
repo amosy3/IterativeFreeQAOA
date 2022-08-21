@@ -11,13 +11,13 @@ This is an official implementation of ***Iterative-Free Quantum Approximate Opti
 
 
 #### Create train dataset
-- Run: ```python maxcut_generator.py --random_prob --number_of_nodes=14 --number_of_layers=2```
+- Run: ```python maxcut_data_generator.py -n 14 -p 2 -prob 0.3 0.9```
 
 #### Create test dataset
-- Run: ```python maxcut_untrained_generator.py --random_prob --number_of_nodes=14 --number_of_layers=2```
+- Run: ```python generate_test_dataset.py -n 14 -p 2 -prob 0.3 0.9```
 
 #### Train neural network
-- Run: ```python train_network.py --train_csv=<train_file_path> --test_csv=<test_file_path> --number_of_nodes=14```
+- Run: ```python train_network.py  -n 14 -p 2 --csv_path <train_file_path>```
 
 
 #### Citation
