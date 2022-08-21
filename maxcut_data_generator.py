@@ -14,7 +14,7 @@ parser = argparse.ArgumentParser(description= "Generates random or const Erdos-R
 parser.add_argument("-n", "--number_of_nodes", help = "also determines number of qubits", type=int)
 parser.add_argument("-p", "--number_of_layers", help = "number of layers in the quantum circuit", type=int)
 parser.add_argument("-data","--dataset_size",help="number of graphs to collect data", type=int, default=5000)
-parser.add_argument("-prob", "--edge_probabilities", help = "generates probability for edge to exist in each graph with uniform probablity U(low,high)", type = tuple,default=(0.5,0.5))
+parser.add_argument("-prob", "--edge_probabilities", help = "generates probability for edge to exist in each graph with uniform probablity U(low,high)", nargs='+', type=float, default=(0.5,0.5))
 parser.add_argument("-weighted","--weighted_graph",help="each edge with weights in U(0,1)",default=False,action='store_true')
 parser.add_argument("-optimizer", "--optimizer", help = "options: 'COBYLA', 'BFGS', 'L-BFGS-B', 'Nelder-Mead', 'SLSQP'", type = str,default= 'BFGS')
 parser.add_argument("-bounds", "--with_bounds", help="add bounds for parametrs, not to weighted graph",default=False, action='store_true')
@@ -25,11 +25,13 @@ args = parser.parse_args()
 nodes_num = args.number_of_nodes
 p = args.number_of_layers
 dataset_size = args.dataset_size
-prob = args.edge_probabilities
+prob = tuple(args.edge_probabilities)
 weighted_bool = args.weighted_graph
 optimizer = args.optimizer
 bounds_bool = args.with_bounds
 noisy_bool = args.noisy_simulation
+
+
 
 print("n = ", nodes_num)
 print("p = ", p)
@@ -47,7 +49,7 @@ assert optimizer in ['COBYLA', 'BFGS', 'L-BFGS-B', 'Nelder-Mead', 'SLSQP'], '-op
 
 
 num_possible_edges = int(nodes_num * (nodes_num - 1) / 2)
-bounds = [( 0, np.pi)] * p + [(0, 2*np.pi)] * p
+bounds = [(0, np.pi)] * p + [(0, 2*np.pi)] * p
 
 assert dataset_size <= 2**num_possible_edges, "data cannot be more than possible configurations"
 

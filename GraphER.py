@@ -79,9 +79,9 @@ class GraphER(nx.Graph):
         :return: vector of edges to create a graph. with or without weights.
         """
         previous_graphs = Data[adjacency_vec].values
+        # generates random edge creation probability
+        graph_edge_prob = np.random.uniform(low=edge_prob[0], high=edge_prob[1])
         if weighted_bool:
-            # generates random edge creation probability
-            graph_edge_prob = np.random.uniform(low=edge_prob[0], high=edge_prob[1])
             # generates weighted vector represents graph adjecancy matrix
             vector_edges = np.array([np.random.rand() if np.random.rand() < graph_edge_prob else 0 for i in
                                      range(num_possible_edges)])
@@ -89,7 +89,7 @@ class GraphER(nx.Graph):
                 vector_edges = np.array([np.random.rand() if np.random.rand() < graph_edge_prob else 0 for i in
                                          range(num_possible_edges)])
         else:
-            graph_edge_prob = np.random.uniform(low=edge_prob[0], high=edge_prob[1])
+
             vector_edges = np.array([1.0 if np.random.rand() < graph_edge_prob else 0.0 for i in
                                      range(num_possible_edges)])
             while any(np.equal(previous_graphs, vector_edges).all(1)) or np.sum(vector_edges) == 0.0:
