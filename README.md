@@ -17,7 +17,7 @@ This is an official implementation of ***Iterative-Free Quantum Approximate Opti
 - Run: ```python generate_test_dataset.py -n 14 -p 2 -prob 0.3 0.9```
 
 #### Train neural network
-- Run: ```python train_network.py  -n 14 -p 2 --csv_path <train_file_path>```
+- Run: ```python train_network.py  -n 14 -p 2 --csv_path "<train_file_path>" ```
 
 
 #### Citation
