@@ -25,6 +25,10 @@ This is an official implementation of ***Iterative-Free Quantum Approximate Opti
 If you find this repository to be useful in your own research, please consider citing the following paper:
 
 ```bib
-@article{TBD
+@article{amosy2022iterative,
+  title={Iterative-Free Quantum Approximate Optimization Algorithm Using Neural Networks},
+  author={Amosy, Ohad and Danzig, Tamuz and Porat, Ely and Chechik, Gal and Makmal, Adi},
+  journal={arXiv preprint arXiv:2208.09888},
+  year={2022}
 }
 ```
