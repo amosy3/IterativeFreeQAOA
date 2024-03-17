@@ -96,7 +96,7 @@ def obtain_tqa_params(delta_t_values_file_path: str) -> Dict[int, List[float]]:
 
 if __name__ == "__main__":
 
-    graphs_sizes = [6, 7]
+    graphs_sizes = [6, 7, 8, 9, 10, 12, 14, 16]
 
     # The number of "head" samples to take from the dataframes to sample 50 graphs
     # of the desired size.
