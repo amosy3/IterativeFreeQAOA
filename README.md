@@ -19,6 +19,8 @@ This is an official implementation of ***Iterative-Free Quantum Approximate Opti
 #### Train neural network
 - Run: ```python train_network.py  -n 14 -p 2 --csv_path "<train_file_path>" ```
 
+#### (Re)generate experiment data using custom noise model
+- Run: ```python mine_data_custom_noise_model_tqa_and_nn.py" ```
 
 #### Citation
 
